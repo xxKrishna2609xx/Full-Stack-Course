@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+
+    <h1>Student Registration</h1>
+
+    <form>
+        <fieldset>
+            <legend>Personal Information</legend>
+
+            <label>Full Name :</label>
+            <input type="text" placeholder="Enter Your Name">
+            <br><br>
+
+            <label>Email :</label>
+            <input type="email" placeholder="example@gmail.com">
+            <br><br>
+
+            <label>Password :</label>
+            <input type="password" placeholder="Enter Your Password">
+            <br><br>
+
+            <label for="phNumber">Phone Number :</label>
+            <input type="tel" id="phNumber" name="phone" required placeholder="9999999999">
+            <br><br>
+
+            <label for="dob">Date Of Birth :</label>
+            <input type="date" id="dob" name="dob" required>
+            <br><br>
+
+            <label>Gender : </label>
+            <input type="radio" name = "gender">Male
+            <input type="radio" name = "gender">Female
+            <input type="radio" name = "gender">Other
+            <br><br>
+
+
+            <label for="time">Preferred Time:</label>
+            <input type="time"
+                   id="time"
+                   name="time"
+                   required>
+
+            <br><br>
+
+            <label>Gender:</label>
+
+            <input type="radio"
+                   id="male"
+                   name="gender"
+                   value="male">
+            <label for="male">Male</label>
+
+            <input type="radio"
+                   id="female"
+                   name="gender"
+                   value="female">
+            <label for="female">Female</label>
+
+            <input type="radio"
+                   id="other"
+                   name="gender"
+                   value="other">
+            <label for="other">Other</label>
+
+        </fieldset>
+        <br>
+        <fieldset>
+
+            <legend>Academic Information</legend>
+            <label for="course">Course:</label>
+            <select id="course" name="course">
+                <option value="">Select Course</option>
+                <option value="btech">B.Tech</option>
+                <option value="bca">BCA</option>
+                <option value="bsc">B.Sc</option>
+                <option value="mca">MCA</option>
+                <option value="mtech">M.Tech</option>
+            </select>
+
+            <br><br>
+
+            <label for="branch">Branch:</label>
+
+            <select id="branch" name="branch">
+                <option value="">Select Branch</option>
+                <option value="cse">Computer Science Engineering</option>
+                <option value="it">Information Technology</option>
+                <option value="ece">Electronics & Communication</option>
+                <option value="me">Mechanical Engineering</option>
+                <option value="ce">Civil Engineering</option>
+            </select>
+
+            <br><br>
+
+            <label for="year">Year:</label>
+
+            <select id="year" name="year">
+                <option value="">Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+            </select>
+
+        </fieldset>
+        <br>
+        <input type="submit" value="Register">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
