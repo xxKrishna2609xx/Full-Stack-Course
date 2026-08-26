@@ -24,5 +24,16 @@ header p {
 }
 
 main{
+    width: 80%;
+    margin:auto;
+}
+
+.intro{
+    margin-top: 45px;
+    background-color: #ffff;
+    padding: 20px;
+    border: 2px solid #d9e2ec;
+}
+.intro h2{
     
 }
