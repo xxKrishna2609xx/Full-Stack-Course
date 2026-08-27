@@ -6,34 +6,100 @@ body{
 
 header{
     background-color: #1e3a5f;
-    height: 180px;
+    height:180px ;
     width: 100%;
     padding: 45px;
     box-sizing: border-box;
     color: #f5f7fa;
     text-align: center;
+    border-bottom: 5px solid #f4a261;
 }
 
 header h1{
-    margin-top: 10px;
-    font-size: 40px;
+    font-size: 42px;
+    margin: 0px;
 }
 
-header p {
-    font-size: 17px;
+header p{
+    font-size: 18px;
 }
 
 main{
     width: 80%;
-    margin:auto;
+    margin: auto;
 }
 
 .intro{
     margin-top: 45px;
-    background-color: #ffff;
+    background-color: white;
     padding: 20px;
     border: 2px solid #d9e2ec;
 }
+
 .intro h2{
+    font-size: 32px;
+    color: #1e3a5f;
+}
+
+.intro p{
+    font-size: 18px;
+    color: gray;
+    line-height: 1.6;
+}
+
+.cards-section h2{
+    font-size: 32px;
+    text-align: center;
+    color: #1e3a5f;
+}
+
+.cards{
+    display: flex;
+    gap: 50px;
+}
+
+.card{
+    border-top: 3px solid orangered;
+    border-left: 3px solid gainsboro;
+    border-right: 3px solid gainsboro;
+    border-bottom: 3px solid gainsboro;
+    background-color: white;
+    padding: 30px;
+}
+
+.card h3{
+    font-size: 25px;
+    color: orange;
+}
+.card p{
+    color: gray;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.featured{
+    background-color: #264653;
+    border: 3px solid #2a9d8f;
+    color: white;
+    margin-top: 45px;
+    padding: 30px;
+}
+
+.featured h2{
+    font-size: 32px;
+}
+
+.featured p{
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+footer{
+    margin-top: 45px;
+    background-color: #1e3a5f;
+    color: white;
+    height: 120px;
+    box-sizing: border-box;
+    display: flex;
     
 }
