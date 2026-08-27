@@ -1,4 +1,4 @@
-body{
+/* body{
     margin:0;
     font-family: Arial,sans-serif;
     background-color: #f5f7fa;
@@ -101,5 +101,79 @@ footer{
     height: 120px;
     box-sizing: border-box;
     display: flex;
-    
+
+} */
+
+body{
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+}
+header{
+    background-color: #1e3a5f;
+    height: 180px;
+    width: 100%;
+    padding: 45px;
+    box-sizing: border-box;
+    color: #f5f7fa;
+    text-align: center;
+    border-bottom: 3px solid #f55d04;
+}
+header h1{
+    margin: 0px;
+    font-size: 42px;
+}
+header p{
+    font-size: 18px;
+}
+main{
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.intro{
+    margin-top: 45px;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #d9e2ec;
+}
+
+.intro h2{
+    font-size: 32px;
+    color: #1e3a5f;
+}
+.intro p{
+    font-size: 18px;
+    color: gray;
+    line-height: 1.6;
+}
+.cards-section{
+    margin-top:45px;
+}
+.cards-section h2{
+    font-size: 32px;
+    text-align: center;
+    color: #1e3a5f;
+}
+.cards{
+    display: flex;
+    gap:50px;
+}
+.cards{
+    border-top:3px solid #f55d04;
+    border-left:3px solid gainsboro;
+    border-right:3px solid gainsboro;
+    border-bottom:3px solid gainsboro;
+    background-color: white;
+    padding: 20px;
+}
+.card h3{
+    font-size: 25px;
+    color: orange;
+}
+.card p{
+    color: gray;
+    line-height: 1.6;
+    margin-bottom: 20px;
 }
