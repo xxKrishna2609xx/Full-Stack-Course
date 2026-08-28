@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f4e9da;
+        }    
+        .moustache {
+            position: relative;
+            width: 0px;
+            height: 130px;
+        }
+    
+        .moustache::before,
+        .moustache::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 300px;
+            height: 130px;
+            background: #2b2b2b;
+            clip-path: path("M300 80 C275 45,230 35,180 55 C130 75,100 95,60 80 C30 68,10 40,20 5 C8 35,5 75,40 105 C75 130,120 125,160 110 C200 98,245 90,280 95 Z");
+        }
+        .moustache::before {
+            right: 0;
+        }
+        .moustache::after {
+            left: 0;
+            transform: scaleX(-1);
+            transform-origin: center top;
+        }
+    </style>
+</head>
+<body>
+  <div class="moustache"></div>     <!-- We can Beautify the webpage using pseudo element -->
+</body>
+</html>
