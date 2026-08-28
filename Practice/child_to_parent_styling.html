@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         div:has(h3, h2){    /* will apply property to whole division */
+            background-color: skyblue;
+            color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>Lorem lpsum</p>
+    </div>
+    <div class="div">
+        <h2>Hellllllllooooooo</h2>
+        <span>Hellllloo</span>          <!-- This Shows that the property is applied to full div not only h3 inside div -->
+    </div>
+    <div class="div">
+        <p>p inside a div which have h3 inside a section inside a div</p>
+        <section>
+            <h3>h3 inside a section inside a div</h3>
+        </section>
+    </div>
+</body>
+</html>
