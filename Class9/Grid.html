@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 5fr;
+            grid-template-rows: 1fr 5fr;
+            grid-template-areas:
+                "sidebar header"
+                "sidebar main";
+            background-color: blue;
+        }
+
+        header {
+            grid-area: header;
+            background-color: green;
+        }
+
+        aside {
+            grid-area: sidebar;
+            background-color: blue;
+        }
+
+        main {
+            grid-area: main;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+</html>
