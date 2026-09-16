@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grayscale Animation</title>
+
+    <style>
+        body {
+            text-align: center;
+        }
+
+        img {
+            width: 300px;
+            height: 200px;
+
+            animation: grayscaleEffect 3s infinite;
+        }
+
+        @keyframes grayscaleEffect {
+
+            0% {
+                filter: grayscale(0%);
+            }
+
+            50% {
+                filter: grayscale(100%);
+            }
+
+            100% {
+                filter: grayscale(0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Grayscale Animation</h1>
+
+    <img src="C:\Users\LENOVO\OneDrive\Desktop\bear.jpg" alt="My Image">
+</body>
+</html>
