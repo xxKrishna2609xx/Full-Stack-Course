@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Responsive Sidebar</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Header */
+    header {
+      width: 100%;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      background-color: bisque;
+    }
+
+    /* Hide checkbox */
+    #toggle {
+      display: none;
+    }
+
+    /* Menu container */
+    .menu-container {
+      display: flex;
+      align-items: center;
+    }
+
+    /* Hamburger and close buttons */
+    .switch {
+      height: 60px;
+      width: 60px;
+      background-color: black;
+      border: 3px solid gainsboro;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .switch span {
+      width: 40px;
+      height: 5px;
+      background-color: whitesmoke;
+      border-radius: 3px;
+    }
+
+    /* Initially hide close button */
+    .close {
+      display: none;
+    }
+
+    /* Toggle buttons */
+    #toggle:checked~header .hamburger {
+      display: none;
+    }
+
+    #toggle:checked~header .close {
+      display: flex;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: darkred;
+    }
+
+    /* Header buttons */
+    .auth button {
+      padding: 10px 18px;
+      margin-left: 5px;
+      border: none;
+      background-color: black;
+      color: white;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Main container */
+    .cont {
+      display: flex;
+      width: 100%;
+      height: calc(100vh - 100px);
+    }
+
+    /* Sidebar */
+    aside {
+      width: 30%;
+      height: 100%;
+      background-color: black;
+      color: white;
+      padding: 20px;
+      transition: width 0.3s ease;
+    }
+
+    aside h2 {
+      margin-bottom: 20px;
+    }
+
+    aside a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      padding: 12px 0;
+    }
+
+    aside a:hover {
+      color: bisque;
+    }
+
+    /* Main content */
+    main {
+      flex: 1;
+      height: 100%;
+      overflow-y: auto;
+      background-color: aquamarine;
+      padding: 20px;
+    }
+
+    /* Hide sidebar when checkbox is checked */
+    #toggle:checked~.cont aside {
+      display: none;
+    }
+
+    /* Content sections */
+    section {
+      min-height: 400px;
+      padding: 30px;
+      margin-bottom: 20px;
+      background-color: white;
+      border-radius: 10px;
+    }
+
+    section h2 {
+      margin-bottom: 15px;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header {
+        height: 80px;
+        padding: 10px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .cont {
+        height: calc(100vh - 80px);
+      }
+
+      aside {
+        width: 60%;
+      }
+
+      .switch {
+        height: 50px;
+        width: 50px;
+      }
+
+      .switch span {
+        width: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Checkbox controls the sidebar -->
+  <input type="checkbox" id="toggle" />
+
+  <!-- Header -->
+  <header>
+    <div class="menu-container">
+      <!-- Hamburger button -->
+      <label for="toggle" class="switch hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Close button -->
+      <label for="toggle" class="switch close">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#cta">CTA</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Authentication buttons -->
+    <div class="auth">
+      <button>Login</button>
+      <button>Register</button>
+    </div>
+  </header>
+
+  <!-- Main layout -->
+  <div class="cont">
+    <!-- Sidebar -->
+    <aside>
+      <h2>Sidebar Menu</h2>
+
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#cta">Call to Action</a>
+      <a href="#contact">Contact</a>
+    </aside>
+
+    <!-- Main content -->
+    <main>
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          Welcome to our website. This section provides information about our
+          organization and its objectives.
+        </p>
+      </section>
+
+      <section id="features">
+        <h2>Our Features</h2>
+        <p>
+          Explore the different features and services available on our
+          platform.
+        </p>
+      </section>
+
+      <section id="cta">
+        <h2>Call to Action</h2>
+        <p>
+          Get started today and explore everything our platform has to offer.
+        </p>
+        <button>Get Started</button>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>
+          Reach out to us for more information, support, or business
+          inquiries.
+        </p>
+      </section>
+    </main>
+  </div>
+</body>
+
+</html>
