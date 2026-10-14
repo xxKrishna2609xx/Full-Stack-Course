@@ -57,6 +57,37 @@
                 console.log("Invalid Day");
                 break;
         }
+
+        //Ternary op
+        var ter = (5 == "5") ? 10:50;
+        console.log(ter);
+        (5 == "5") ? console.log(10) : console.log(50);
+
+        //For Loop
+        for(let i=0 ; i<5 ; i++){
+            console.log("For Loop : "+i);
+        }
+
+        //While Loop
+        let n = 506
+        while(n>0){
+            console.log("While : " + n%10);
+            n = Math.floor(n/10);
+        }
+
+        //Do-While
+        let n2 = 3
+        do{
+            console.log('do-while' +n2);
+            n2 *= 3
+        }while(n2<9);
+
+        //Nested Loops
+        for(let i=1 ; i<=4 ; i++){
+            for(let j=0 ; j<3 ; j++){
+                console.log("Nested Loops : "+i*j);
+            }
+        }
     </script>
 </body>
 </html>
