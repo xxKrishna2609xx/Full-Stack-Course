@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        if(true){
+            console.log('Hello');
+        }
+
+        if(false){
+            console.log('World');
+        }else{
+            console.log('Not In Conditions');
+        }
+
+        var num = parseInt(prompt("Enter Your Number"));
+
+        if(num >= 80){
+            console.log('Grade A');
+        }else if(num >= 60){
+            console.log('Grade B');
+        }else{
+            console.log('Good');
+        }
+
+        //Switch
+        var str = "Tues";
+
+        switch (str) {
+            case "Mon":
+                console.log("Monday");
+                break;
+            case "Tues":
+                console.log("Tuesday");
+                break;
+            case "Wed":
+                console.log("Wednesday");
+                break;
+            case "Thurs":
+                console.log("Thursday");
+                break;
+            case "Fri":
+                console.log("Friday");
+                break;
+            case "Sat":
+                console.log("Saturday");
+                break;
+            case "Sun":
+                console.log("Sunday");
+                break;
+            default:
+                console.log("Invalid Day");
+                break;
+        }
+    </script>
+</body>
+</html>
