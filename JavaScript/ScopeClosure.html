@@ -62,7 +62,75 @@
         //
         //
 
+        function outFun(){
+            var outn1 = 10;
+            const outn2 = 20;
+            let outn3 = 30;
+
+            function innFun(){
+                console.log('In innFun');
+
+                console.log('outn1 : '+outn1);
+                console.log('outn2 : '+outn2);
+                console.log('outn3 : '+outn3);
+            }
+
+            return innFun;
+        }
+
+        var x = outFun();
+        x();
+
+
+        //
+        //
+
+        function basicClosure(){
+            const message = 'Ag performed well in Ds';
+
+            function innBasic(){
+                console.log(message);
+            }
+
+            return innBasic;
+        }
+
+        var res = basicClosure();
+        res();
+
+        //
+        //
         
+        function counterClosure(){
+            var count = 0;
+
+            function increment(){
+                count++;
+                console.log(count);
+            }
+
+            return increment;
+        }
+
+        var counter = counterClosure();
+        counter();
+        counter();
+        counter();
+
+        //
+        //
+
+        (function (name , age){
+            console.log({
+                Name: name,
+                Age: age
+            })
+        })('Krishna',20);
+
+        //
+        //
+
+        ss
     </script>
 </body>
 </html>
