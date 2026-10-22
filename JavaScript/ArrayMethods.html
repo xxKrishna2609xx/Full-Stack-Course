@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Methods Practice</title>
+</head>
+<body>
+
+    <h1>JavaScript Array Methods Practice</h1>
+    <p>Open your browser console to see the results.</p>
+
+    <script>
+        // ==================================================
+        // 1. ARRAY METHODS
+        // ==================================================
+        // Arrays store multiple values in a single variable.
+        // Array indexes start from zero.
+        // JavaScript arrays can contain different data types.
+
+        var arr = ["xyz", 9, "abc", 10, 1, 11];
+        console.log(arr);
+
+        // const obj = {
+        //    key: value,
+        //    key1: value,
+        //    key3: value
+        //    };
+
+        var stdDetails = [
+            {
+                id: 16,
+                name: "Bhargav",
+                age: 22,
+                section: "AG",
+                email: "bhargav@gamil.com",
+            },
+            {
+                id: 43,
+                name: "Raghav",
+                age: 22,
+                section: "AG",
+                email: "raghav@gamil.com",
+            },
+            {
+                id: 14,
+                name: "Atul",
+                age: 22,
+                section: "AG",
+                email: "atul@gamil.com",
+            },
+            {
+                id: 43,
+                name: "Raghav",
+                age: 22,
+                section: "AG",
+                email: "raghav@gamil.com",
+            },
+            {
+                id: 14,
+                name: "Atul",
+                age: 22,
+                section: "AG",
+                email: "atul@gamil.com",
+            },
+            {
+                id: 43,
+                name: "Raghav",
+                age: 22,
+                section: "AG",
+                email: "raghav@gamil.com",
+            },
+            {
+                id: 14,
+                name: "Atul",
+                age: 22,
+                section: "AG",
+                email: "atul@gamil.com",
+            },
+            {
+                id: 43,
+                name: "Raghav",
+                age: 22,
+                section: "AG",
+                email: "raghav@gamil.com",
+            },
+            {
+                id: 14,
+                name: "Atul",
+                age: 22,
+                section: "AG",
+                email: "atul@gamil.com",
+            },
+        ];
+        console.log(stdDetails);
+
+        // --------------------------------------------------
+        // 1.1 PUSH()
+        // --------------------------------------------------
+        // Adds one or more elements to the end of an array.
+        // Returns the new length of the array.
+        // Modifies the original array.
+        var num = stdDetails.push({
+            id: 20,
+            name: "Divesh",
+            age: 20,
+            section: "AG",
+            email: "divesh@gmail.com",
+        });
+        console.log(num);
+        console.log(stdDetails);
+
+        // --------------------------------------------------
+        // 1.2 POP()
+        // --------------------------------------------------
+        // Removes and returns the last element of an array.
+        // Returns undefined if the array is empty.
+        // Modifies the original array.
+        var popArr = stdDetails.pop();
+        console.log(popArr);
+        console.log(stdDetails);
+
+        // --------------------------------------------------
+        // 1.3 UNSHIFT()
+        // --------------------------------------------------
+        // Adds one or more elements to the beginning
+        // of an array and returns the new array length.
+        var unshiftarr = stdDetails.unshift({
+            id: 20,
+            name: "Divesh",
+            age: 20,
+            section: "AG",
+            email: "divesh@gmail.com",
+        });
+        console.log(unshiftarr);
+        console.log(stdDetails);
+
+        // --------------------------------------------------
+        // 1.4 SHIFT()
+        // --------------------------------------------------
+        // Removes and returns the first element of an array.
+        // Returns undefined if the array is empty.
+        var shiftArr = stdDetails.shift();
+        console.log(shiftArr);
+        console.log(stdDetails);
+
+        // --------------------------------------------------
+        // 1.5 SLICE()
+        // --------------------------------------------------
+        // Returns a shallow copy of a selected portion
+        // of an array without modifying the original array.
+        // The ending index is excluded.
+
+        console.log(stdDetails.slice(1, 5));
+
+        // --------------------------------------------------
+        // 1.6 SPLICE()
+        // --------------------------------------------------
+        // Adds, removes, or replaces array elements
+        // at a specified index.
+        // Modifies the original array.
+        console.log('splice', stdDetails.splice(1, 3));
+        console.log(stdDetails);
+
+        // --------------------------------------------------
+        // 1.7 CONCAT()
+        // --------------------------------------------------
+        // Combines two or more arrays or values.
+        // Returns a new array without modifying the
+        // original arrays.
+        var arr1 = [1, 2, 3, 4, 5];
+        var arr2 = [5, 6, 7, 8, 9];
+        var arr3 = arr1.concat(arr2);
+        console.log(arr3);
+
+        // --------------------------------------------------
+        // 1.8 INCLUDES()
+        // --------------------------------------------------
+        // Checks whether an array contains a specified value.
+        // Returns true or false.
+
+        console.log(arr2.includes(505));
+        console.log(arr2.includes(5));
+
+        // --------------------------------------------------
+        // 1.9 INDEXOF()
+        // --------------------------------------------------
+        // Returns the first index of a matching element.
+        // Returns -1 if the element is not found.
+        console.log(arr1.indexOf(101));
+        console.log(arr1.indexOf(1));
+
+        // --------------------------------------------------
+        // 1.10 JOIN()
+        // --------------------------------------------------
+        // Combines array elements into a string using
+        // the specified separator.
+        console.log(arr1.join());
+        console.log(arr1.join(""));
+        console.log(arr1.join("a"));
+
+        // --------------------------------------------------
+        // 1.11 REVERSE()
+        // --------------------------------------------------
+        // Reverses the order of array elements.
+        // Modifies the original array.
+        console.log(arr2.reverse());
+
+
+        // --------------------------------------------------
+        // 1.12 SORT()
+        // --------------------------------------------------
+        // Sorts array elements in place.
+        // By default, values are sorted as strings.
+        // Use a comparison function for numerical sorting.
+        console.log(arr2.sort());
+
+        // ==================================================
+        // 2. FOREACH()
+        // ==================================================
+        // Executes a callback function once for each
+        // assigned array element.
+        // Returns undefined.
+        // Commonly used for side effects such as displaying
+        // values or updating external state.
+        // Returning a value from its callback does not
+        // create a result array.
+
+        //  arrayName.forEach(callback function);
+
+        arr1.forEach((num) => console.log("for each :", num))
+
+        // --------------------------------------------------
+        // 2.1 CALLBACK PARAMETERS
+        // --------------------------------------------------
+        // The first callback parameter is the current element.
+        // The second parameter is the current index.
+        // The third parameter is the array being traversed.
+
+        arr1.forEach((num, index, arr) => {
+            console.log(num);
+            console.log(index);
+            console.log(arr);
+        })
+
+        // --------------------------------------------------
+        // 2.2 LIMITATIONS
+        // --------------------------------------------------
+        // forEach() does not support breaking out of the
+        // loop using break or skipping an iteration using
+        // continue directly.
+        // Use a for...of loop when early termination is needed.
+    </script>
+</body>
+</html>
