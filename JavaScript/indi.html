@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavasScript DOM <Main></Main></title>
+</head>
+<body>
+    <h1 id="heading">Your Name</h1>
+    <p class="content">
+        Share with your students a picture of a hamburger or sandwich
+
+    </p>
+    <script>
+        var h1id = document.getElementById('heading');
+        console.log(h1id);
+        var pClass = document.getElementsByClassName('content');
+        console.log(pClass);
+        var tagName = document.getElementsByTagName('h1');
+        console.log(tagName);
+        var quer = document.querySelector('.content');
+        console.log(querr);
+    </script>
+    
+</body>
+</html>
