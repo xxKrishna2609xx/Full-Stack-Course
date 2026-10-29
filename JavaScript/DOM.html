@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>JavaScript DOM Manipulation</title>
+</head>
+<body>
+
+ <h1 id="heading">Welcome to JavaScript</h1>
+
+ <p class="description">Learn DOM Manipulation</p>
+
+ <p class="description">JavaScript makes webpages interactive.</p>
+
+ <div id="container">
+ <p>First Paragraph</p>
+ <p>Second Paragraph</p>
+ </div>
+
+ <ul id="subjects">
+ <li>HTML</li>
+ <li>CSS</li>
+ <li>JavaScript</li>
+ </ul>
+
+ <button id="changeBtn">Change Heading</button>
+
+<script>
+
+ const ul = document.querySelector('#subjects');
+ console.log(ul);
+ // ==================================================
+ // 1. DOM TREE
+ // ==================================================
+ // DOM stands for Document Object Model.
+ // The browser represents an HTML document as a tree
+ // of objects called nodes.
+ //
+ // Document
+ //   └── html
+ //       ├── head
+ //       │   ├── meta
+ //       │   └── title
+ //       └── body
+ //           ├── h1
+ //           ├── p
+ //           ├── div
+ //           └── button
+ //
+ // The document is the root entry point for accessing
+ // and manipulating the webpage.
+ //
+ // Parent: A node containing another node.
+ // Child: A node directly contained inside another node.
+ // Sibling: A node sharing the same parent.
+ // Element: An HTML element represented as a DOM node.
+ // Text node: A node containing text.
+ //
+ // parentElement returns an element's parent element.
+ // children returns an HTMLCollection of child elements.
+ // childNodes includes text nodes and comment nodes.
+ // firstElementChild returns the first child element.
+ // nextElementSibling returns the next sibling element.
+
+
+ // ==================================================
+ // 2. SELECTING ELEMENTS
+ // ==================================================
+ // JavaScript provides DOM methods to select elements
+ // so that their content, attributes, and styles can
+ // be accessed or modified.
+ // const ele = document.grtElementById('headi')
+
+ // --------------------------------------------------
+ // 2.1 GETELEMENTBYID()
+ // --------------------------------------------------
+ // Selects the element with the specified ID.
+ // Returns the element or null if it does not exist.
+
+ const heading = document.getElementById("heading");
+
+ console.log(heading);
+
+
+ // --------------------------------------------------
+ // 2.2 GETELEMENTSBYCLASSNAME()
+ // --------------------------------------------------
+ // Selects elements with the specified class name.
+ // Returns a live HTMLCollection.
+
+ const descriptions = document.getElementsByClassName("description");
+
+ console.log(descriptions);
+
+
+ // --------------------------------------------------
+ // 2.3 GETELEMENTSBYTAGNAME()
+ // --------------------------------------------------
+ // Selects elements with the specified tag name.
+ // Returns a live HTMLCollection.
+
+ const paragraphs = document.getElementsByTagName("p");
+
+ console.log(paragraphs);
+
+
+ // --------------------------------------------------
+ // 2.4 QUERYSELECTOR()
+ // --------------------------------------------------
+ // Selects the first element matching a CSS selector.
+ // Returns null if no matching element is found.
+
+ const firstParagraph = document.querySelector(".description");
+
+ console.log(firstParagraph);
+
+
+ // --------------------------------------------------
+ // 2.5 QUERYSELECTORALL()
+ // --------------------------------------------------
+ // Selects all elements matching a CSS selector.
+ // Returns a static NodeList.
+
+ const allParagraphs = document.querySelectorAll("p");
+
+ console.log(allParagraphs);
+
+
+ // --------------------------------------------------
+ // 2.6 SELECTING NESTED ELEMENTS
+ // --------------------------------------------------
+ // A CSS selector can select elements inside a
+ // particular parent element.
+
+ const container = document.getElementById("container");
+
+ const containerParagraphs = container.querySelectorAll("p");
+
+ console.log(containerParagraphs);
+
+
+ // ==================================================
+ // 3. MODIFYING ELEMENTS
+ // ==================================================
+ // DOM manipulation allows JavaScript to change
+ // webpage content, attributes, styles, and structure.
+
+
+ // --------------------------------------------------
+ // 3.1 INNERHTML
+ // --------------------------------------------------
+ // innerHTML gets or sets the HTML markup inside
+ // an element.
+ // Avoid inserting untrusted user input through innerHTML.
+
+ heading.innerHTML = "Welcome to DOM Manipulation";
+
+
+ // --------------------------------------------------
+ // 3.2 TEXTCONTENT
+ // --------------------------------------------------
+ // textContent gets or sets the text content of an element.
+ // HTML markup assigned through textContent is treated
+ // as plain text rather than parsed as HTML.
+
+ heading.textContent = "Learning JavaScript DOM";
+
+
+ // --------------------------------------------------
+ // 3.3 INNERHTML VS TEXTCONTENT
+ // --------------------------------------------------
+ // innerHTML parses assigned content as HTML markup.
+ // textContent treats assigned content as text.
+ // Use textContent when displaying untrusted text.
+
+
+ // --------------------------------------------------
+ // 3.4 MODIFYING STYLES
+ // --------------------------------------------------
+ // The style property modifies an element's inline CSS.
+ // CSS property names use camelCase in JavaScript.
+
+ heading.style.color = "blue";
+ heading.style.backgroundColor = "lightyellow";
+ heading.style.fontSize = "32px";
+
+
+ // --------------------------------------------------
+ // 3.5 SETATTRIBUTE()
+ // --------------------------------------------------
+ // setAttribute() sets an HTML attribute.
+ // getAttribute() reads an attribute.
+ // removeAttribute() removes an attribute.
+
+ heading.setAttribute("title", "Main Heading");
+
+ console.log(heading.getAttribute("title"));
+
+ // heading.removeAttribute("title");
+
+
+ // --------------------------------------------------
+ // 3.6 CLASSLIST
+ // --------------------------------------------------
+ // classList provides methods for working with CSS classes.
+ //
+ // add() adds a class.
+ // remove() removes a class.
+ // toggle() adds or removes a class.
+ // contains() checks whether a class exists.
+
+ heading.classList.add("main-heading");
+
+ console.log(heading.classList.contains("main-heading"));
+
+ // heading.classList.remove("main-heading");
+ // heading.classList.toggle("highlight");
+
+
+ // ==================================================
+ // 4. CREATING AND REMOVING ELEMENTS
+ // ==================================================
+ // createElement() creates a new element.
+ // appendChild() adds a node to the end of a parent.
+ // prepend() inserts content at the beginning.
+ // remove() removes an element from the DOM.
+
+
+ // --------------------------------------------------
+ // 4.1 CREATE AND APPEND
+ // --------------------------------------------------
+
+ const newParagraph = document.createElement("p");
+
+ newParagraph.textContent = "This paragraph was created using JavaScript.";
+
+ container.appendChild(newParagraph);
+
+
+ // --------------------------------------------------
+ // 4.2 PREPEND
+ // --------------------------------------------------
+
+ const firstItem = document.createElement("li");
+
+ firstItem.textContent = "Introduction";
+
+ document.getElementById("subjects").prepend(firstItem);
+
+
+ // --------------------------------------------------
+ // 4.3 REMOVE ELEMENT
+ // --------------------------------------------------
+ // remove() deletes the selected element from the DOM.
+
+ // newParagraph.remove();
+
+
+ // ==================================================
+ // 5. DOM MANIPULATION WITH EVENTS
+ // ==================================================
+ // addEventListener() registers a function that executes
+ // when a specified event occurs.
+ // A click event occurs when the user clicks an element.
+
+ const button = document.getElementById("changeBtn");
+
+ button.addEventListener("click", function () {
+ heading.textContent = "Heading Changed Successfully";
+ heading.style.color = "green";
+ heading.classList.toggle("highlight");
+    });
+
+
+ // ==================================================
+ // 6. IMPORTANT DIFFERENCES
+ // ==================================================
+ // getElementById():
+ // Selects one element using its ID.
+ //
+ // querySelector():
+ // Selects the first matching CSS selector.
+ //
+ // querySelectorAll():
+ // Returns a static NodeList of matching elements.
+ //
+ // getElementsByClassName() and getElementsByTagName():
+ // Return live HTMLCollections.
+ //
+ // innerHTML:
+ // Reads or parses HTML markup.
+ //
+ // textContent:
+ // Reads or sets text content.
+ //
+ // style:
+ // Modifies inline CSS styles.
+ //
+ // classList:
+ // Adds, removes, toggles, and checks CSS classes.
+ //
+ // createElement():
+ // Creates a new DOM element.
+ //
+ // appendChild():
+ // Adds a node to a parent element.
+ //
+ // remove():
+ // Removes an element from the DOM.
+ //
+ // addEventListener():
+ // Registers an event handler.
+
+</script>
+
+</body>
+</html>
