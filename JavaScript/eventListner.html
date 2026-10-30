@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h2>JavaScript Events</h2>
+
+    <button id="clickBtn">Click Me</button>
+    <div id="box" style="padding: 20px; background: lightblue; margin: 10px 0">
+      Move your mouse over this box
+    </div>
+
+    <input type="text" id="keyInput" placeholder="Type something" />
+
+    <form id="myForm">
+      <input type="text" id="username" placeholder="Enter username" required />
+      <input type="email" id="email" placeholder="Enter email" required />
+      <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        // ==================================================
+        // 1. MOUSE EVENTS
+        // ==================================================
+        // Mouse events occur when a user interacts with
+        // webpage elements using a mouse or similar pointer.
+
+        var btn = document.querySelector("#clickBtn");
+        var box = document.querySelector('#box');
+
+        // element.addEventListener(event, handling_function)
+        // const btn = document.getElementById("clickBtn");
+
+        // CLICK --> Occurs when an element is Clicked
+        
+        btn.addEventListener("click", () => {
+          console.log("Button is Clicked");
+        });
+
+        // DBCLICK --> Occurs when an element is Double Clicked 
+
+        btn.addEventListener("dblclick",() => {
+          alert("Double Click Triggered !!");
+        })
+
+        // MouseOver --> Occurs when the Pointer enters an Element
+        
+        box.addEventListener("mouseover" , () => {
+        box.style['background-color'] = "lightgreen";
+        })
+
+        box.addEventListener('mouseout', ()=>{
+          box.style['background-color'] = "lightblue";
+        })
+
+        // Mousemove 
+
+        // box.addEventListener("mousemove", (event) => {
+        //   console.log("Mouse Pointer :" , event.clientX , event.clientY)
+        // })
+
+        // MouseDown --> Mousedown occurs when a mouse button is Pressed
+        // Mouseup --> Occurs when a Pressed mouse button is released
+
+        box.addEventListener('mousedown', ()=>{
+          box.style.backgroundColor = "yellow";
+        });
+        box.addEventListener('mouseup', ()=>{
+          box.style.backgroundColor = "red"
+        })
+    </script>
