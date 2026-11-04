@@ -1,37 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<html>
+    <head>
+        <title>Card Rendering</title>
+    </head>
 <style>
     figure{
-        background-color: lightgray;
-        width: 500px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin: 20px auto;
+        background-color: lightblue;
+        width: 300px;
+        box-shadow: 0px 0px 15px black;
         border-radius: 10px;
+
     }
     figure img{
         width:100%
     }
-</style>
-<body>
-    <div id="cont">
-        <figure>
-            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523" alt="Taj Mahal">
-            <figcaption>
-                <h2>Taj Mahal</h2>
-                <p>A magnificent white marble monument in Agra, built by Shah Jahan in memory of his wife Mumtaz Mahal.</p>
-                <a href="https://www.google.com/maps/search/?api=1&query=Taj+Mahal+Agra" target="_blank">View on Map</a>
-            </figcaption>
-        </figure>
-    </div>
-</body>
+    figcaption{
+        font-size: xx-large;
+        font-width:500px;
 
-<script>
-    const places = [
+    }
+</style>
+    <body>
+        <div id="cont">
+            <figure>
+                <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523",alt="dd"/>
+                <div>
+                    <figcaption>Name</figcaption>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, laborum.</p>
+            <a href="#basc">Location</a>
+                </div>
+            </figure>
+        </div>
+    </body>
+    <script>
+        const places = [
       {
         id: 1,
         img: "https://images.unsplash.com/photo-1564507592333-c60657eea523",
@@ -106,7 +107,7 @@
       },
       {
         id: 9,
-        img: "https://images.unsplash.com/photo-1590050752117-23a9d7fc6c21",
+        img: "https://wallpaperaccess.com/full/15210890.jpg",
         placename: "Hampi",
         description:
           "An ancient historical site in Karnataka, known for its magnificent Vijayanagara Empire ruins and impressive stone temples.",
@@ -123,5 +124,20 @@
           "https://www.google.com/maps/search/?api=1&query=Dashashwamedh+Ghat+Varanasi",
       },
     ];
-</script>
+    document.querySelector("#cont").innerHTML=places
+    .map((data) =>`
+     <figure>
+        <img 
+        src="${data.img}"
+        alt="${data.placename}"
+        />
+        <div>
+            <figcaption>${data.placename}</figcaption>
+            <p>${data.description}</p>
+            <a href="${data.location}">Location</a>
+            </div>
+        </figure>`
+    )
+    .join("");
+    </script>
 </html>
