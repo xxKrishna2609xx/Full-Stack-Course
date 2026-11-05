@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <form>
+      <input
+        type="text"
+        name="taskInput"
+        id="taskInput"
+        required
+        placeholder="Enter the Task"
+      />
+      <button type="submit">Add Task</button>
+      <button type="button" id="clearAllBtn" onclick="clearAllTasks()">Delete All Tasks</button>
+    </form>
+    <div id="taskCont"></div>
+  </body>
+  <script>
+    var form = document.querySelector("form");
+    var taskInput = document.querySelector("#taskInput");
+    var taskCont = document.querySelector("#taskCont");
+    var taskList = [];
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      taskList.push(taskInput.value);
+      console.log(taskList);
+      taskInput.value = "";
+      renderEle();
+    });
+
+    function renderEle() {
+      taskCont.innerHTML = "";
+
+      taskList.forEach((data, index) => {
+        taskCont.innerHTML += `
+          <p>
+            ${data}
+            <button onclick="editTask(${index})">Edit</button>
+          </p>
+        `;
+      });
+    }
+
+    function editTask(index) {
+      var updatedTask = prompt("Edit your task:", taskList[index]);
+      if (updatedTask !== null && updatedTask.trim() !== "") {
+        taskList[index] = updatedTask.trim();
+        renderEle();
+      }
+    }
+
+    function clearAllTasks() {
+      taskList = [];
+      renderEle();
+    }
+  </script>
+</html>
